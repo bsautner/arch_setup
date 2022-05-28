@@ -1,0 +1,299 @@
+sudo systemctl enable sshd
+sudo netctl start ethernet-dhcp 
+sudo systemctl enable ntpd.service
+sudo pacman -S dhcpcd
+   54  cd /etc/systemd/network
+   55  ip addr
+   56  sudo vi 10-external0.link
+   57  cp 10-external0.link 10-internal1.link
+   58  sudo cp 10-external0.link 10-internal1.link
+   59  ip addr
+   60  sudo vi ./10-internal1.link 
+   61  cd /etc/netctl/
+   62  ls
+   63  netctl
+   64  sudo netctl stop ethernet-static 
+   65  sudo netctl disable ethernet-static 
+   66  rm ethernet-static 
+   67  sudo rm ethernet-static 
+   68  sudo reboot
+   69  ip addr
+   70  netctl list
+   71  netctl 
+   72  netctl enable ethernet-dhcp
+   73  sudo netctl enable ethernet-dhcp
+   74  netctl list
+   75  ip addr
+   76  sudo netctl start ethernet-dhcp
+   77  ip addr
+   78  sudo netctl is-enabled ethernet-dhcp
+   79  cd .. /etc/netctl/
+   80  cd /etc/netctl
+   81  ls
+   82  cd examples/
+   83  ls
+   84  cp ethernet-static ..
+   85  sudo cp ethernet-static ..
+   86  cd ..
+   87  ip addr
+   88  sudo vi ethernet-static 
+   89  ls
+   90  sudo netctl enable ethernet-static 
+   91  sudo netctl start ethernet-static 
+   92  ip addr
+   93  ip addr
+   94  cd /etc/systemd/network
+   95  ls
+   96  mv 10-internal1.link 20internal1.link
+   97  sudo mv 10-internal1.link 20internal1.link
+   98  ls
+   99  sudo mv 20internal1.link 20-internal1.link
+  100  ip addr
+  101  sudo reboot
+  102  ip addr
+  103  cd /sys/class/net/
+  104  ls
+  105  cd enp4s0f1
+  106  ls
+  107  cat address
+  108  ip addr
+  109  cd /etc/udev/rules.d/
+  110  ls
+  111  sudo vi 10-network.rules
+  112  sudo reboot
+  113  ip addr
+  114  cd /etc/netctl
+  115  ls
+  116  cp ethernet-dhcp ext1.profile
+  117  sudo cp ethernet-dhcp ext1.profile
+  118  ls
+  119  sudo vi ext1.profile 
+  120  sudo vi int.profile
+  121  sudo netctl enable ext1.profile
+  122  sudo mv int.profile int1.profile
+  123  sudo netctl enable int1.profile 
+  124  sudo netctl start ext1.profile
+  125  sudo netctl start int1.profile 
+  126  ip addr
+  127  ls
+  128  cd examples/
+  129  ls
+  130  sudo cp ethernet-static ../int1.profile
+  131  cd ..
+  132  sudo vi int1.profile 
+  133  sudo netctl start int1.profile 
+  134  ifconfig
+  135  sudo netctl start int1.profile 
+  136  ip addr
+  137  ip addr
+  138  ip addr
+  139  ip addr
+  140  ip addr
+  141  ls
+  142  sudo vi int1.profile 
+  143  sudo netctl start int1.profile 
+  144  sudo reboot
+  145  ip addr
+  146  cd /etc/netctl
+  147  ls
+  148  sudo netctl start int1.profile 
+  149  sudo vi int1.profile 
+  150  sudo netctl start int1.profile 
+  151  journalctl -xe
+  152  sudo vi int1.profile 
+  153  ls /sys/subsystem/net/devices
+  154  sudo ls /sys/subsystem/net/devices
+  155  cd /etc/systemd/network
+  156  ls
+  157  cat 20-internal1.link 
+  158  ls
+  159  sudo rm *
+  160  sudo vi /etc/udev/rules.d/10-network.rules
+  161  ;s
+  162  cd /etc/netctl
+  163  ls
+  164  cd interfaces/
+  165  ls
+  166  cd ..
+  167  sudo vi int1.profile 
+  168  sudo netctl
+  169  netctl list
+  170  sudo netctl disable int1.profile
+  171  netctl list
+  172  sudo netctl verify int1.profile
+  173  sudo mv int1.profile internal1.profile
+  174  sudo netctl enable internal1.profile
+  175  sudo netctl start internal1.profile
+  176  netctl list
+  177  sudo netctl start internal1.profile
+  178  journalctl -xeu netctl@internal1.profile.service
+  179  sudo netctl start internal1.profile
+  180  journalctl -xeu netctl@internal1.profile.service
+  181  netctl list
+  182  sudo vi ./internal1.profile 
+  183  sudo netctl start internal1.profile
+  184  ip addr
+  185  ip addr
+  186  ssh localhost
+  187  sudo reboot
+  188  ip addr
+  189  ping 8.8.8.8
+  190  sudo reboot
+  191  ip addr
+  192  sudo pacman -S dnsmasq
+  193  sudo vi /etc/dnsmasq.conf
+  194  sudo vi /etc/dnsmasq.conf
+  195  sudo systemctl enable dnsmasq.service
+  196  sudo systemctl start dnsmasq.service
+  197  ip addr
+  198  ip addr
+  199  sudo reboot
+  200  ifconfig
+  201  sudo reboot
+  202  history
+  203  cd /etc/netctl
+  204  ls
+  205  sudo vi internal1.profile 
+  206  netctl disable intern1-profile
+  207  sudo netctl disable intern1-profile
+  208  sudo netctl enable intern1-profile
+  209  ls
+  210  sudo netctl enable intern1.profile
+  211  sudo netctl enable interna1-profile
+  212  sudo netctl enable interna1.profile
+  213  sudo netctl list
+  214  ls
+  215  history | grep netctl
+  216  sudo netctl enable internal1.profile
+  217  sudo netctl start internal1.profile
+  218  sudo netctl enable internal1.profile
+  219  sudo reboot
+  220  ip addr
+  221  sudo vi /etc/dnsmasq.conf 
+  222   sysctl -a | grep forward
+  223  sudo  sysctl -a | grep forward
+  224  sudo sysctl net.ipv4.ip_forward=1
+  225  sudo  sysctl -a | grep forward
+  226  sudo vi /etc/sysctl.d/30-ipforward.conf
+  227  sudo reboot
+  228  sudo  sysctl -a | grep forward
+  229  sudo pacman -S iptables 
+  230  iptables -t nat -A POSTROUTING -o external0 -j MASQUERADE
+  231  sudo iptables -t nat -A POSTROUTING -o external0 -j MASQUERADE
+  232  su
+  233  sudo iptables -L
+  234  sudo vi /etc/dnsmasq.conf 
+  235  sudo reboot
+  236  sudo iptables -t nat -A forward -o external0 -j MASQUERADE
+  237  sudo iptables -t nat -A forward -o external0 -j MASQUERADE
+  238  ip addr
+  239  sudo iptables -t nat -A forward -o external0 -j MASQUERADE
+  240  sudo iptables -t nat -A forward -o internet0 -j MASQUERADE
+  241  sudo iptables -t nat -A forward -o external0 -j MASQUERADE
+  242  sudo iptables nat -h
+  243  sudo iptables -h nat
+  244  sudo iptables -t nat -h
+  245  cd /etc/systemd/network
+  246  ls
+  247  ls -la
+  248  sudo vi external0.network
+  249  sudo reboot
+  250  ip addr
+  251  ping 8.8.8.8
+  252  sudo iptables -t nat -A forward -o external0 -j MASQUERADE
+  253  ip addr
+  254  sudo systemctl status dnsmasq.service
+  255  sudo systemctl enable  dnsmasq.service
+  256  sudo systemctl start  dnsmasq.service
+  257  sudo systemctl status dnsmasq.service
+  258  sudo pacman -U dnsmasq
+  259  sudo pacman -S dnsmasq
+  260  sudo systemctl enable  dnsmasq.service
+  261  sudo systemctl start  dnsmasq.service
+  262  journalctl -xeu dnsmasq.service
+  263  sudo pacman -R dnsmasq
+  264  sudo pacman -S dnsmasq
+  265  sudo systemctl enable dnsmasq.service
+  266  sudo systemctl start  dnsmasq.service
+  267  sudo systemctl status dnsmasq.service
+  268  sudo reboot
+  269  sudo vi /etc/dnsmasq.conf
+  270  sudo vi /etc/dnsmasq.conf
+  271  sudo systemctl restart  dnsmasq.service
+  272  sudo systemctl status dnsmasq.service
+  273  ip addr
+  274  sudo vi /etc/dnsmasq.conf
+  275  sudo systemctl restart  dnsmasq.service
+  276  sudo systemctl status dnsmasq.service
+  277  sudo systemctl restart  dnsmasq.service
+  278  sudo systemctl enable dnsmasq.service
+  279  sudo systemctl restart  dnsmasq.service
+  280  sudo systemctl start  dnsmasq.service
+  281  sudo systemctl status dnsmasq.service
+  282  sudo vi /etc/dnsmasq.conf
+  283  sudo systemctl restart  dnsmasq.service
+  284  sudo systemctl status dnsmasq.service
+  285  sudo pacman -S shorewall
+  286  sudo pacman -S shorewall6
+  287  git 
+  288  sudo pacman -S git
+  289  git clone https://aur.archlinux.org/shorewall.git
+  290  cd shorewall/
+  291  ls
+  292  makepkg
+  293  cd ..
+  294  git clone https://aur.archlinux.org/shorewall.git
+  295  rm -fR shorewall/
+  296  git clone https://aur.archlinux.org/shorewall.git
+  297  cd shorewall/
+  298  makepkg
+  299  cd ..
+  300  rm -fR shorewall/
+  301  git clone https://aur.archlinux.org/shorewall.git
+  302  cd shorewall/
+  303  ls
+  304  makepkg
+  305  gpg --recv-key 
+  306  makepkg
+  307  cd /usr/share/doc/
+  308  ls
+  309  cd shorewall/
+  310  ls
+  311  cd /usr
+  312  ls
+  313  cd share/
+  314  ls
+  315  cd doc/
+  316  ls
+  317  cd packages
+  318  sudo find -name two-interfaces /
+  319  sudo find -name two-interfaces 
+  320  sudo find / -name two-interfaces 
+  321  cd /home/ben/shorewall/pkg/shorewall6/usr/share/doc/shorewall6/Samples6/
+  322  ls
+  323  vi two-interfaces/
+  324  cd two-interfaces/
+  325  ls
+  326  sysctl -a | grep forward
+  327  iptables -t nat -A POSTROUTING -o external0 -j MASQUERADE
+  328  sudo iptables -t nat -A POSTROUTING -o external0 -j MASQUERADE
+  329  sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+  330  iptables -A FORWARD -i internal1 -o internet0 -j ACCEPT
+  331  sudo iptables -A FORWARD -i internal1 -o internet0 -j ACCEPT
+  332  sudo reboot
+  333  ip addr
+  334  sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+  335  iptables -t nat -A POSTROUTING -o external0 -j MASQUERADE
+  336  sudo iptables -t nat -A POSTROUTING -o external0 -j MASQUERADE
+  337  sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+  338  sudo iptables -A FORWARD -i internal1 -o external0 -j ACCEPT
+  339  sudo iptables-save -f /etc/iptables/iptables.rules
+  340  sudo reboot
+  341  sudo systemctl enable iptables.service
+  342  sudo systemctl status iptables.service
+  343  sudo systemctl start iptables.service
+  344  sudo reboot
+  345  passwd
+  346  sudo 
+  347  sudo ls
+  348  history
