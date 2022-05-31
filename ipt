@@ -1,0 +1,4 @@
+iptables -t nat -A POSTROUTING -o external0 -j MASQUERADE
+iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i internal1 -o external0 -j ACCEPT
+iptables-save -f /etc/iptables/iptables.rules
