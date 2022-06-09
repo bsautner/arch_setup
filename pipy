@@ -19,6 +19,8 @@ sudo pip3 install --upgrade setuptools
 pip3 install adafruit-circuitpython-rplidar
 pip3 install --upgrade adafruit-python-shell
 pip3 install adafruit-circuitpython-lsm303_accel
+pip3 install paho-mqtt
+
 sudo pip3 install adafruit-circuitpython-lsm303_accel
 sudo pip3 install adafruit-python-shell
 sudo cp -fv mosquitto.conf /etc/mosquitto
