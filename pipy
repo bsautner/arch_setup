@@ -24,6 +24,7 @@ sudo pip3 install adafruit-python-shell
 sudo cp -fv mosquitto.conf /etc/mosquitto
 sudo systemctl enable mosquitto
 sudo systemctl start mosquitto
+sudo mosquitto_passwd -c /etc/mosquitto/passwd ben
 
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
 sudo python3 raspi-blinka.py 
