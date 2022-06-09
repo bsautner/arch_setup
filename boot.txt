@@ -7,6 +7,7 @@ dtparam=i2c_arm_baudrate=10000
 # Uncomment this to enable infrared communication.
 #dtoverlay=gpio-ir,gpio_pin=17
 #dtoverlay=gpio-ir-tx,gpio_pin=18
+dtoverlay=w1-gpio
 
 # Additional overlays and parameters are documented /boot/overlays/README
 
