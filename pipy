@@ -1,11 +1,12 @@
 sudo apt-get update
 sudo apt-get upgrade -y
+
 wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
 sudo apt-key add mosquitto-repo.gpg.key
 cd /etc/apt/sources.list.d/
 sudo wget https://repo.mosquitto.org/debian/mosquitto-bullseye.list
 cd ~
-sudo apt-get install build-essential python-dev install python3-pip libgpiod2 git  mosquitto mosquitto-clients -y --upgrade 
+sudo apt-get install pip3 libgpiod2 build-essential python-dev install nm-tool curl libsdl2-mixer-2.0-0 libsdl2-image-2.0-0 libsdl2-2.0-0 python3-pip libgpiod2 git  mosquitto mosquitto-clients wiringpi git-core adafruit-circuitpython-rplidar -y --upgrade 
 
 bash -c 'echo "dtoverlay=w1-gpio" >> /boot/config.txt
 sudo apt install default-jdk
@@ -15,11 +16,12 @@ sudo python setup.py install
 sudo pip3 install Adafruit_Python_DHT
 pip3 install adafruit-circuitpython-dht
 sudo apt-get install 
-sudo apt install pip3
 sudo pip3 install --upgrade setuptools
-pip3 install --upgrade setuptools
-
+pip3 install adafruit-circuitpython-rplidar
 pip3 install --upgrade adafruit-python-shell
+pip3 install adafruit-circuitpython-lsm303_accel
+sudo pip3 install adafruit-circuitpython-lsm303_accel
+
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
 sudo python3 raspi-blinka.py 
 sudo pip3 install adafruit-python-shell
