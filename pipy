@@ -1,0 +1,21 @@
+sudo apt-get update
+sudo apt-get upgrade -y
+
+bash -c 'echo "dtoverlay=w1-gpio" >> /boot/config.txt
+sudo apt install default-jdk
+git clone https://github.com/adafruit/Adafruit_Python_DHT.git
+cd Adafruit_Python_DHT
+sudo apt-get install build-essential python-dev
+sudo python setup.py install
+sudo apt-get -y install python3-pip
+sudo pip3 install Adafruit_Python_DHT
+pip3 install adafruit-circuitpython-dht
+sudo apt-get install libgpiod2
+sudo apt install pip3
+sudo pip3 install --upgrade setuptools
+pip3 install --upgrade setuptools
+cd ~
+pip3 install --upgrade adafruit-python-shell
+wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
+sudo python3 raspi-blinka.py 
+sudo pip3 install adafruit-python-shell
