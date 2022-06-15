@@ -2,7 +2,7 @@ sudo apt update
 sudo apt upgrade
 sudo apt autoremove
 
-wget s3://www.sautner.me/jdk-11.0.14_linux-aarch64_bin.tar.gz
+wget https://s3.amazonaws.com/www.sautner.me/jdk-11.0.14_linux-aarch64_bin.tar.gz
 sudo mkdir /usr/lib/jvm
 cd /usr/lib/jvm
 sudo tar -xvzf ~/jdk-11.0.14_linux-aarch64_bin.tar.gz
@@ -29,6 +29,10 @@ sudo python3 raspi-blinka.py
 
 pip3 install --upgrade adafruit-circuitpython-dotstar adafruit-circuitpython-motor adafruit-circuitpython-bmp280
 sudo i2cdetect -y 1
+
+git clone https://github.com/HinTak/seeed-voicecard
+cd seeed-voicecard
+sudo ./install.sh
 
 sudo apt install xserver-xorg
 sudo apt install raspberrypi-ui-mods
