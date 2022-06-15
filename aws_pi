@@ -25,4 +25,9 @@ sudo python3 raspi-blinka.py
 
 pip3 install --upgrade adafruit-circuitpython-dotstar adafruit-circuitpython-motor adafruit-circuitpython-bmp280
 sudo i2cdetect -y 1
+
+sudo apt install xserver-xorg
+sudo apt install raspberrypi-ui-mods
+sudo apt install lightdm
+
 sudo reboot
