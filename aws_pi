@@ -34,8 +34,8 @@ git clone https://github.com/HinTak/seeed-voicecard
 cd seeed-voicecard
 sudo ./install.sh
 
-sudo apt install xserver-xorg
-sudo apt install raspberrypi-ui-mods
-sudo apt install lightdm
-
+sudo apt install xserver-xorg -y
+sudo apt install raspberrypi-ui-mods -y
+sudo apt install lightdm -y
+sudo apt install mosquitto mosquitto-clients -y
 sudo reboot
