@@ -37,5 +37,16 @@ sudo apt install mosquitto mosquitto-clients -y
 bash -c 'allow_anonymous false" >> /etc/mosquitto/conf.d/default.conf 
 bash -c 'password_file /etc/mosquitto/passwd" >> /etc/mosquitto/conf.d/default.conf 
 bash -c 'password_file /etc/mosquitto/passwd" >> /etc/mosquitto/conf.d/default.conf 
+cd ~
+git clone https://github.com/bsautner/scorpion.git
+cd scorpion/display
+./gradlew clean assemble shadowJar
+
+
+
 echo "TODO - raspi-config enable boot to ui, create and encypt password file"
+
+
+
+
 sudo reboot
