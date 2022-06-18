@@ -34,5 +34,8 @@ sudo apt install xserver-xorg -y
 sudo apt install raspberrypi-ui-mods -y
 sudo apt install lightdm -y
 sudo apt install mosquitto mosquitto-clients -y
-echo "TODO - raspi-config enable boot to ui"
+bash -c 'allow_anonymous false" >> /etc/mosquitto/conf.d/default.conf 
+bash -c 'password_file /etc/mosquitto/passwd" >> /etc/mosquitto/conf.d/default.conf 
+bash -c 'password_file /etc/mosquitto/passwd" >> /etc/mosquitto/conf.d/default.conf 
+echo "TODO - raspi-config enable boot to ui, create and encypt password file"
 sudo reboot
