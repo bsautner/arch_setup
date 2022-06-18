@@ -30,10 +30,6 @@ sudo python3 raspi-blinka.py
 pip3 install --upgrade adafruit-circuitpython-dotstar adafruit-circuitpython-motor adafruit-circuitpython-bmp280 paho-mqtt
 sudo i2cdetect -y 1
 
-git clone https://github.com/HinTak/seeed-voicecard
-cd seeed-voicecard
-sudo ./install.sh
-
 sudo apt install xserver-xorg -y
 sudo apt install raspberrypi-ui-mods -y
 sudo apt install lightdm -y
