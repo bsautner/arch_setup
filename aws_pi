@@ -38,4 +38,5 @@ sudo apt install xserver-xorg -y
 sudo apt install raspberrypi-ui-mods -y
 sudo apt install lightdm -y
 sudo apt install mosquitto mosquitto-clients -y
+echo "TODO - raspi-config enable boot to ui"
 sudo reboot
