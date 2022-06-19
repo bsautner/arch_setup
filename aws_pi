@@ -1,6 +1,7 @@
 sudo apt update
 sudo apt upgrade
 sudo apt autoremove
+#scp id_rsa.pub pi@scorp:~/.ssh/authorized_keys
 
 wget https://s3.amazonaws.com/www.sautner.me/jdk-11.0.14_linux-aarch64_bin.tar.gz
 sudo mkdir /usr/lib/jvm
