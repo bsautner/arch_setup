@@ -42,6 +42,18 @@ sudo apt install mosquitto mosquitto-clients -y
 bash -c 'allow_anonymous false" >> /etc/mosquitto/conf.d/default.conf 
 bash -c 'password_file /etc/mosquitto/passwd" >> /etc/mosquitto/conf.d/default.conf 
 bash -c 'password_file /etc/mosquitto/passwd" >> /etc/mosquitto/conf.d/default.conf 
+
+#camera
+pip3 install flask
+pip3 install numpy 
+pip3 install opencv-contrib-python
+pip3 install imutils
+pip3 install opencv-python
+pip3 install picamera
+
+
+
+
 cd ~
 git clone https://github.com/bsautner/scorpion.git
 cp ./scorpion/run.sh ~
